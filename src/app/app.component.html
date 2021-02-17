@@ -27,6 +27,13 @@
   color:white;
   background-color: black;
 }
+.navbar-toggler{
+  color:white;
+  /* background-color: black; */
+}
+.navbar-toggler-icon{
+  color:white;
+}
 </style>
 
 <!-- Toolbar -->
@@ -35,7 +42,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Bdaybumps</a>
+    <a class="navbar-brand" href="/home">Bdaybumps</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <form class="d-flex ms-auto">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,10 +56,10 @@
           <a class="nav-link active" aria-current="page" href="#">Chat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Login</a>
+          <a class="nav-link active" href="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Register</a>
+          <a class="nav-link active" href="/register">Register</a>
         </li>
         
       </ul>
@@ -60,6 +67,6 @@
     </div>
   </div>
 </nav>
-<app-home></app-home>
+
 
 <router-outlet></router-outlet>
