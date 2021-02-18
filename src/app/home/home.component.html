@@ -19,9 +19,15 @@
       .btnstyles {
         margin-right: 20px;
       }
-      .pimage{
-          border-radius: 50%;
-          height:70px;
+      .pimage {
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+      }
+      .profilecard{
+          border:1px solid black;
+          border-radius: 10px;
+          padding: 20px;
       }
     </style>
   </head>
@@ -29,25 +35,49 @@
     <div class="container-fluid homecontainer">
       <div class="row">
         <div class="col col-md-3">Others</div>
-        <div class="col col-md-4 offset-md-1 feed">
-           
-          <h4> <img src="/assets/images/devathi.jpg" alt="Profile" class="img-thumbnail pimage"><span style="margin-left: 30px;">Devathi Mahesh</span></h4>
-          <div>
-            <button class="btn btn-outline-dark btnstyles btn-sm">
-                <fa-icon [icon]="faplus" class="fa-lg"></fa-icon> Add Bestie
-            </button>
-            <button class="btn btn-outline-dark btnstyles btn-sm">
-                <fa-icon [icon]="faImage" class="fa-lg"></fa-icon> Create Memories
-            </button>
+        <div class="col col-md-5  feed">
+          <div class="shadow p-3 mb-5 bg-white rounded">
+            <div class="row justify-content-md-center">
+              <h4>
+                <img
+                  src="/assets/images/devathi.jpg"
+                  alt="Profile"
+                  class="img-thumbnail pimage col col-md-2"
+                /><span style="margin-left: 30px" class="col col-md-8">Devathi Mahesh</span>
+              </h4>
+            </div>
+            <div class="row " style="margin-left: 30px;margin-top: -20px;">
+                <button class="offset-md-2 col col-md-3 btn btn-outline-dark btnstyles btn-sm">
+                  <fa-icon [icon]="faplus" class="fa-lg"></fa-icon> Add Bestie
+                </button>
+                <button class="col col-md-5 btn btn-outline-dark btnstyles btn-sm">
+                  <fa-icon [icon]="faImage" class="fa-lg"></fa-icon> Create
+                  Memories
+                </button>
+              
+            </div>
+            <div class="row  mt-2" style="margin-left: 30px;">
+              <input
+                class=" offset-md-2 col col-md-8"
+                type="search"
+                placeholder="Search for hashtags"
+                aria-label="Search"
+              />
+            </div>
+           </div>
+
+         
+        </div>
+        <div class="offset-md-1 col col-md-3 remcard">
+            <h4>Your Besties Timeline.</h4>
+            <hr />
+            <h5>Bday Stars of the day</h5>
+            <app-remcard></app-remcard>
+            <h5>Bday Stars of the Week</h5>
+            <app-remcard></app-remcard>
+            <h5>Bday Starts of the  Month</h5>
+            <app-remcard></app-remcard>
           </div>
-        </div>
-        <div class="col col-md-4 remcard">
-          <h4>Your Besties Bdays Timeline.</h4>
-          <hr />
-          <h5>Today</h5>
-          <h5>This Week</h5>
-          <h5>This Month</h5>
-        </div>
         <div></div>
       </div>
     </div>

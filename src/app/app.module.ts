@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeedComponent } from './feed/feed.component';
 import { RemindersComponent } from './reminders/reminders.component';
+import { RemcardComponent } from './remcard/remcard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { RemindersComponent } from './reminders/reminders.component';
     LoginComponent,
     RegisterComponent,
     FeedComponent,
-    RemindersComponent
+    RemindersComponent,
+    RemcardComponent
   ],
   imports: [
     BrowserModule,
