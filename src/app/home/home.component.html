@@ -15,6 +15,9 @@
       .feed {
         padding: 2%;
         margin: "20px";
+        /* position: relative; */
+    /* overflow-y: scroll; */
+    /* scroll-behavior: smooth; */
       }
       .btnstyles {
         margin-right: 20px;
@@ -29,12 +32,20 @@
           border-radius: 10px;
           padding: 20px;
       }
+      .item{
+          padding: 20px;
+
+      }
     </style>
   </head>
   <body>
     <div class="container-fluid homecontainer">
-      <div class="row">
-        <div class="col col-md-3">Others</div>
+      <div class="row ">
+        <div class="col col-md-3">
+           <div class="item" *ngFor="let i of litems;">
+               {{i}}
+           </div>
+        </div>
         <div class="col col-md-5  feed">
           <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="row justify-content-md-center">
@@ -54,7 +65,7 @@
                   <fa-icon [icon]="faImage" class="fa-lg"></fa-icon> Create
                   Memories
                 </button>
-              
+             
             </div>
             <div class="row  mt-2" style="margin-left: 30px;">
               <input
@@ -64,8 +75,9 @@
                 aria-label="Search"
               />
             </div>
+           
            </div>
-
+           <app-feed></app-feed>
          
         </div>
         <div class="offset-md-1 col col-md-3 remcard">

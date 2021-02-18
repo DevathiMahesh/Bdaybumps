@@ -8,6 +8,7 @@ import {faPlus,faImage} from '@fortawesome/free-solid-svg-icons'
 export class HomeComponent implements OnInit {
   faplus = faPlus;
   faImage = faImage;
+  litems = ["My Profile","Friends","Bestiees","Memories","Gallery"]
   constructor() { }
 
   ngOnInit(): void {
