@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import checkLogin from '../utils/checklogin';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +9,7 @@ import checkLogin from '../utils/checklogin';
 export class AppComponent {
   title = 'Bdaybumps';
   check = false;
+  bellicon = faBell;
   constructor()
   {
     this.check = checkLogin();

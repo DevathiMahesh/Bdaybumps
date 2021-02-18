@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

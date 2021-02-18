@@ -30,6 +30,10 @@
   .navbar-toggler-icon {
     color: white;
   }
+  .bell {
+    color: white;
+    height: 20px;
+  }
 </style>
 
 <!-- Toolbar -->
@@ -53,12 +57,10 @@
         <button class="btn searchButton" type="submit">Search</button>
       </form> -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div style="margin-top: 10px;">
+          <fa-icon [icon]="bellicon" class="bell fa-lg"></fa-icon>
+        </div>
         <li class="nav-item" *ngIf="check">
-          <a class="nav-link active" aria-current="page" href="#"
-            >Notifications</a
-          >
-        </li>
-        <li class="nav-item"  *ngIf="check">
           <a class="nav-link active" aria-current="page" href="#">Chat</a>
         </li>
         <li class="nav-item" *ngIf="check">
