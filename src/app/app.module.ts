@@ -9,12 +9,16 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FeedComponent } from './feed/feed.component';
+import { RemindersComponent } from './reminders/reminders.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FeedComponent,
+    RemindersComponent
   ],
   imports: [
     BrowserModule,

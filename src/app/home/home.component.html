@@ -1,1 +1,55 @@
-<p>home works!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .remcard {
+        min-height: 500px;
+        background-color: white;
+        padding: 2%;
+        border-radius: 10px;
+        margin: "20px";
+      }
+      .homecontainer {
+        background-color: #fefefe;
+      }
+      .feed {
+        padding: 2%;
+        margin: "20px";
+      }
+      .btnstyles {
+        margin-right: 20px;
+      }
+      .pimage{
+          border-radius: 50%;
+          height:70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid homecontainer">
+      <div class="row">
+        <div class="col col-md-3">Others</div>
+        <div class="col col-md-4 offset-md-1 feed">
+           
+          <h4> <img src="/assets/images/devathi.jpg" alt="Profile" class="img-thumbnail pimage"><span style="margin-left: 30px;">Devathi Mahesh</span></h4>
+          <div>
+            <button class="btn btn-outline-dark btnstyles btn-sm">
+                <fa-icon [icon]="faplus" class="fa-lg"></fa-icon> Add Bestie
+            </button>
+            <button class="btn btn-outline-dark btnstyles btn-sm">
+                <fa-icon [icon]="faImage" class="fa-lg"></fa-icon> Create Memories
+            </button>
+          </div>
+        </div>
+        <div class="col col-md-4 remcard">
+          <h4>Your Besties Bdays Timeline.</h4>
+          <hr />
+          <h5>Today</h5>
+          <h5>This Week</h5>
+          <h5>This Month</h5>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
