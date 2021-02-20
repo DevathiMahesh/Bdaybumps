@@ -2,22 +2,45 @@
 <html>
   <head>
     <style>
+        ::-webkit-scrollbar {
+            width: 0px; 
+        background: transparent; 
+        }
       .remcard {
         min-height: 500px;
         background-color: white;
         padding: 2%;
         border-radius: 10px;
-        margin: "20px";
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll; 
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+       
       }
       .homecontainer {
         background-color: #fefefe;
+        margin-top: 60px;
+     
       }
       .feed {
         padding: 2%;
         margin: "20px";
-        /* position: relative; */
-    /* overflow-y: scroll; */
-    /* scroll-behavior: smooth; */
+        margin-left: 50px;
+        margin-right: 50px;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll; 
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+  
+      }
+      .leftmenu{
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll; 
+        scroll-behavior: smooth;
+        scrollbar-width: none;
       }
       .btnstyles {
         margin-right: 20px;
@@ -44,7 +67,7 @@
   <body>
     <div class="container-fluid homecontainer">
       <div class="row ">
-        <div class="col col-md-3">
+        <div class="col col-md-3 leftmenu">
            <div class="item" *ngFor="let i of litems;">
                {{i}}
            </div>
@@ -83,15 +106,11 @@
            <app-feed></app-feed>
          
         </div>
-        <div class="offset-md-1 col col-md-3 remcard">
-            <h4>Your Besties Timeline.</h4>
-            <hr />
-            <h5>Bday Stars of the day</h5>
+        <div class="col col-md-3  remcard">
+            
             <app-remcard></app-remcard>
-            <h5>Bday Stars of the Week</h5>
-            <app-remcard></app-remcard>
-            <h5>Bday Starts of the  Month</h5>
-            <app-remcard></app-remcard>
+            
+           
           </div>
         <div></div>
       </div>
