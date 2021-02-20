@@ -7,9 +7,14 @@ import {faGift} from '@fortawesome/free-solid-svg-icons'
 })
 export class RemcardComponent implements OnInit {
   fagift=faGift;
+  modaldisplay = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  showModal():void{
+      this.modaldisplay = !this.modaldisplay;
+      console.log("in modal",this.modaldisplay);
   }
 
 }
