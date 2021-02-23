@@ -68,8 +68,8 @@
     <div class="container-fluid homecontainer">
       <div class="row ">
         <div class="col col-md-3 leftmenu">
-           <div class="item" *ngFor="let i of litems;">
-               {{i}}
+           <div class="item" *ngFor="let i of litems;" (click)="navigate(i)">
+               {{i.title}}
            </div>
         </div>
         <div class="col col-md-5  feed">
