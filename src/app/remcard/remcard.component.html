@@ -14,27 +14,113 @@
     </style>
   </head>
   <body>
-    <h4  style="text-align: center;">Your Besties Timeline.</h4>
+    <h4 style="text-align: center">Your Besties Timeline.</h4>
     <hr />
-    <h5 style="text-align: center;">Bday Stars of the day</h5>
-    <div class="row  rcard" *ngFor="let i of data.day">
+    <h5 style="text-align: center">Bday Stars of the day</h5>
+    <div class="row rcard" *ngFor="let i of data.day">
       <fa-icon [icon]="fagift" class="fa-lg col col-md-1"> </fa-icon>
-      <span class="col col-md-6 offset-md-1"> {{i.fname}} </span>
-      <button class="col col-md-3 btn btn-light btn-sm">Wish</button>
+      <span class="col col-md-6 offset-md-1"> {{ i.fname }} </span>
+      <button
+        class="col col-md-3 btn btn-light btn-sm"
+        data-toggle="modal"
+        data-target="#exampleModalLong"
+        (click)="saveWish(i)"
+      >
+        Wish
+      </button>
     </div>
-    <hr/>
-    <h5  style="text-align: center;">Bday Stars of the Week</h5>
+    <hr />
+    <h5 style="text-align: center">Bday Stars of the Week</h5>
     <div class="row rcard" *ngFor="let i of data.week">
-        <fa-icon [icon]="fagift" class="fa-lg col col-md-1"> </fa-icon>
-        <span class="col col-md-6 offset-md-1"> {{i.fname}} </span>
-        <button class="col col-md-3 btn btn-light btn-sm">Wish</button>
-      </div>
-      <hr/>
-    <h5  style="text-align: center;">Bday Starts of the Month</h5>
+      <fa-icon [icon]="fagift" class="fa-lg col col-md-1"> </fa-icon>
+      <span class="col col-md-6 offset-md-1"> {{ i.fname }} </span>
+      <button class="col col-md-3 btn btn-light btn-sm"
+      data-toggle="remindmodal"
+      data-target="#remindModalLong"
+      >Remind</button>
+    </div>
+    <hr />
+    <h5 style="text-align: center">Bday Starts of the Month</h5>
     <div class="row rcard" *ngFor="let i of data.month">
-        <fa-icon [icon]="fagift" class="fa-lg col col-md-1"> </fa-icon>
-        <span class="col col-md-6 offset-md-1"> {{i.fname}} </span>
-        <button class="col col-md-3 btn btn-light btn-sm">Wish</button>
+      <fa-icon [icon]="fagift" class="fa-lg col col-md-1"> </fa-icon>
+      <span class="col col-md-6 offset-md-1"> {{ i.fname }} </span>
+      <button class="col col-md-3 btn btn-light btn-sm">Remind</button>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Send Your Hearty Wishes to {{ wishdata.fname }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row justify-content-md-center mb-2">
+              <div class="col col-md-6">
+                <fa-icon [icon]="faphone" class="fa-lg"> </fa-icon>
+                <span style="margin-left: 20px">{{ wishdata.fphone }}</span>
+              </div>
+            </div>
+            <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <fa-icon [icon]="famail" class="fa-lg"> </fa-icon>
+                <span style="margin-left: 20px">{{ wishdata.femail }}</span>
+              </div>
+            </div>
+            <hr />
+            <div class="row justify-content-md-center mb-1">Drop your Message</div>
+            <div class="form-group row justify-content-md-center mb-2">
+              
+                <textarea class=" col col-md-6" id="exampleFormControlTextarea1" rows="3">
+                   Wish You Many More Happy returns of the day {{wishdata.fname}}
+                </textarea>
+              </div>
+            <div class="row justify-content-md-center">
+              <button class="btn btn-outline-dark col col-md-6">
+                Wish on your Behalf
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- reminder modal -->
+    <div class="modal fade" id="remindModalLong" tabindex="-1" role="dialog" aria-labelledby="remindModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="remindModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="remindmodal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="remindmodal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
   </body>
 </html>

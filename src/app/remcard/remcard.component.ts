@@ -1,5 +1,5 @@
 import { Component, OnInit, resolveForwardRef } from '@angular/core';
-import {faGift} from '@fortawesome/free-solid-svg-icons'
+import {faGift,faPhone,faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 @Component({
   selector: 'app-remcard',
@@ -8,8 +8,11 @@ import axios from 'axios';
 })
 export class RemcardComponent implements OnInit {
   fagift=faGift;
+  faphone = faPhone;
+  famail = faEnvelope;
   modaldisplay = false;
-  data = {}
+  data = {};
+  wishdata = {};
   constructor() { 
      axios.get("http://localhost:8015/bdaybumps/getTimeline/"+3).then(
        (response)=>{
@@ -28,6 +31,9 @@ export class RemcardComponent implements OnInit {
   showModal():void{
       this.modaldisplay = !this.modaldisplay;
       console.log("in modal",this.modaldisplay);
+  }
+  saveWish(wishdata):void{
+      this.wishdata = wishdata;
   }
 
 }
