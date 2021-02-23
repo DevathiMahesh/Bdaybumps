@@ -12,6 +12,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeedComponent } from './feed/feed.component';
 import { RemindersComponent } from './reminders/reminders.component';
 import { RemcardComponent } from './remcard/remcard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MemoriesComponent } from './memories/memories.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { OrdersComponent } from './orders/orders.component';
+import { GiftsComponent } from './gifts/gifts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,12 @@ import { RemcardComponent } from './remcard/remcard.component';
     RegisterComponent,
     FeedComponent,
     RemindersComponent,
-    RemcardComponent
+    RemcardComponent,
+    ProfileComponent,
+    MemoriesComponent,
+    GalleryComponent,
+    OrdersComponent,
+    GiftsComponent
   ],
   imports: [
     BrowserModule,
