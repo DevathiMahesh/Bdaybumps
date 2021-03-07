@@ -18,7 +18,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { OrdersComponent } from './orders/orders.component';
 import { GiftsComponent } from './gifts/gifts.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import {addBuserReducer} from './reducers/Buser.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
@@ -41,8 +41,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     FormsModule,
     FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    StoreModule.forRoot({Buser:addBuserReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

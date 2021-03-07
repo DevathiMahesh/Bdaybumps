@@ -3,11 +3,14 @@ import checkLogin from '../utils/checklogin';
 import { faBell} from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Buser } from './models/buser';
-import { BuserState } from './buser/store/reducer/buser.reducer';
+
 import {Observable} from 'rxjs';
 
 import {select} from '@ngrx/store';
-import {selectBusers} from './buser/store/selector/buser.selectors';
+import { AppState } from './app.state';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -19,10 +22,10 @@ export class AppComponent {
   check = false;
   bellicon = faBell;
   buser:Observable<Buser[]>;
-  constructor(private store:Store<BuserState>)
+  constructor(private store:Store<AppState>)
   {
     this.check = checkLogin();
-    this.buser = this.store.pipe(select(selectBusers))
+     this.buser = this.store.select((state)=>{console.log("in app",state.buser);return state.buser});
     console.log("in app");
   }
   reloadNavlinks = ()=>{

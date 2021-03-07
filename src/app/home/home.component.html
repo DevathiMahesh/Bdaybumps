@@ -83,6 +83,7 @@
                 /><span style="margin-left: 30px" class="col col-md-8">Devathi Mahesh</span>
               </h4>
             </div>
+            
             <div class="row " style="margin-left: 30px;margin-top: -20px;">
                 <button class="offset-md-2 col col-md-3 btn btn-outline-dark btnstyles btn-sm">
                   <fa-icon [icon]="faplus" class="fa-lg"></fa-icon> Add Bestie
@@ -92,6 +93,9 @@
                   Memories
                 </button>
              
+            </div>
+            <div *ngFor="let buse of buser.Buser; let i = index" style="color:red;">
+              <span>{{ i + 1 }}.</span> {{ buse.bfirstName}}
             </div>
             <div class="row  mt-2" style="margin-left: 30px;">
               <input
