@@ -56,10 +56,15 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn searchButton" type="submit">Search</button>
       </form> -->
+
+      <div *ngFor="let buse of buser | async; let i = index" style="color: white;">
+        <span>{{ i + 1 }}.</span> {{ buse.bfirstname}}
+      </div>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <div style="margin-top: 10px;">
+        <div style="margin-top: 10px">
           <fa-icon [icon]="bellicon" class="bell fa-lg"></fa-icon>
         </div>
+        <!-- {{buser[0].bfirstname}} -->
         <li class="nav-item" *ngIf="check">
           <a class="nav-link active" aria-current="page" href="#">Chat</a>
         </li>

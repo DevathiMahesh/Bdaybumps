@@ -17,6 +17,9 @@ import { MemoriesComponent } from './memories/memories.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { OrdersComponent } from './orders/orders.component';
 import { GiftsComponent } from './gifts/gifts.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,9 @@ import { GiftsComponent } from './gifts/gifts.component';
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

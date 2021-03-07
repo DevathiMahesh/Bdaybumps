@@ -26,7 +26,6 @@
             ],
             "styles": [
               "src/styles.css"
-           
             ],
             "scripts": []
           },
@@ -124,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Bdaybumps"
+    }
+  },
+  "defaultProject": "Bdaybumps",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
