@@ -20,6 +20,8 @@ import { GiftsComponent } from './gifts/gifts.component';
 import { StoreModule } from '@ngrx/store';
 import {addBuserReducer} from './reducers/Buser.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { FriendsComponent } from './friends/friends.component';
+import { BestiesComponent } from './besties/besties.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MemoriesComponent,
     GalleryComponent,
     OrdersComponent,
-    GiftsComponent
+    GiftsComponent,
+    FriendsComponent,
+    BestiesComponent
   ],
   imports: [
     BrowserModule,

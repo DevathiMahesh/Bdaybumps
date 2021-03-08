@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   buser:any;
   litems = [
     { title: 'My Profile', route: 'profile' },
-    { title: 'Friends', route: 'profile' },
-    {title:'Bestiees',route:'profile'},
+    { title: 'Friends', route: 'friends' },
+    {title:'Besties',route:'besties'},
     {title:'Memories',route:'memories'},
     {title:'Gallery',route:'gallery'},
     {title:'Gifts',route:'gifts'},
@@ -25,11 +25,13 @@ export class HomeComponent implements OnInit {
   ];
   constructor(private router:Router,private store:Store<AppState>) {
     
-    let data = this.store.select(state => state).subscribe(data => {
-      console.log('data', data);
-      return data;
+    let temp = this.store.select(state => state).subscribe(data => {
+      console.log('data', data["Buser"]);
+      this.buser = data["Buser"][0];
+      return data["Buser"][0];
     });
-    this.buser = data;
+    
+    console.log("checking buser",this.buser);
   }
 
   ngOnInit(): void {}

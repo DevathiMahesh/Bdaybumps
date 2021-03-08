@@ -50,16 +50,14 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/home">Bdaybumps</a>
+    <span class="navbar-brand" (click)="loadHome()">Bdaybumps</span>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <!-- <form class="d-flex ms-auto">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn searchButton" type="submit">Search</button>
       </form> -->
 
-      <div *ngFor="let buse of buser | async; let i = index" style="color: white;">
-        <span>{{ i + 1 }}.</span> {{ buse.bfirstname}}
-      </div>
+      
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <div style="margin-top: 10px">
           <fa-icon [icon]="bellicon" class="bell fa-lg"></fa-icon>

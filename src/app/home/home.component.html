@@ -80,7 +80,7 @@
                   src="/assets/images/devathi.jpg"
                   alt="Profile"
                   class="img-thumbnail pimage col col-md-2"
-                /><span style="margin-left: 30px" class="col col-md-8">Devathi Mahesh</span>
+                /><span style="margin-left: 30px" class="col col-md-8"> {{buser.bfirstName+buser.blastName}} </span>
               </h4>
             </div>
             
@@ -94,9 +94,7 @@
                 </button>
              
             </div>
-            <div *ngFor="let buse of buser.Buser; let i = index" style="color:red;">
-              <span>{{ i + 1 }}.</span> {{ buse.bfirstName}}
-            </div>
+           
             <div class="row  mt-2" style="margin-left: 30px;">
               <input
                 class=" offset-md-2 col col-md-8"
@@ -107,6 +105,8 @@
             </div>
            
            </div>
+           
+         
            <app-feed></app-feed>
            
          

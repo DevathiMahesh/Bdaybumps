@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 
 import {select} from '@ngrx/store';
 import { AppState } from './app.state';
+import { Router } from '@angular/router';
 
 
 
@@ -21,12 +22,12 @@ export class AppComponent {
   title = 'Bdaybumps';
   check = false;
   bellicon = faBell;
-  buser:Observable<Buser[]>;
-  constructor(private store:Store<AppState>)
+ 
+  constructor(private router:Router)
   {
     this.check = checkLogin();
-     this.buser = this.store.select((state)=>{console.log("in app",state.buser);return state.buser});
-    console.log("in app");
+   
+   
   }
   reloadNavlinks = ()=>{
      this.check = checkLogin();
@@ -35,6 +36,10 @@ export class AppComponent {
   logout = ()=>{
     localStorage.clear();
     this.reloadNavlinks();
+  }
+  loadHome = ()=>{
+    console.log("in loadhome");
+    this.router.navigate(["home"]);
   }
   
 }

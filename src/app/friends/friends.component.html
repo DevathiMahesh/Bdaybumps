@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      button {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+      .friendcard {
+        min-height: 70px;
+        padding-top: 20px;
+        border-radius: 15px;
+        border:1px solid black;
+        margin-bottom: 15px;
+        margin-left: 70px;
+      }
+      .pimage {
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        margin-top: -20px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container justify-content-md-center"
+      style="margin-top: 150px; background-color: white"
+    >
+      <div class="row shadow p-3 mb-5 bg-white rounded">
+        <h2  style="text-align:center;margin:20px;">Your Friends List</h2>
+        <div
+          class="col col-md-5  friendcard justify-content-md-center"
+          *ngFor="let i of friends"
+        >
+          <div class="row">
+            <div class="col col-md-6">
+                <img
+                src="/assets/images/devathi.jpg"
+                alt="Profile"
+                class="img-thumbnail pimage col col-md-2"
+              />
+              <b>{{ i.fname }}</b>
+            </div>
+
+            <div class="col col-md-6">
+              <button class="btn btn-outline-dark btnstyles btn-sm">Bestie</button>
+              <button class="btn btn-outline-dark btnstyles btn-sm">Remove</button>
+            </div>
+          
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,1 +1,51 @@
-<h1 style="margin-top: 200px;">profile works!</h1>
+<html>
+    
+        <head>
+            <style>
+           .pimage {
+               border-radius: 10%;
+               height: 200px;
+               width: 200px;
+             }
+            </style>
+           </head>
+    
+    <body>
+        <div class="container" style="margin-top:100px">
+            <div class="row">
+                <div class="col col-md-3">
+                    <img
+                    src="/assets/images/devathi.jpg"
+                    alt="Profile"
+                    class="img-thumbnail pimage col col-md-2"
+                  />
+                </div>
+                <div class="col col-md-6">
+                    <div class="form-group mb-3 mt-1">
+                        <label for="userName">FirstName:</label>
+                        <input
+                          type="text"
+                          name="firstname"
+                          class="form-control"
+                          id="firstname"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter FirstName"
+                          [(ngModel)] = "username" 
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">LastName:</label>
+                        <input
+                          type="password"
+                          name="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Password"
+                          [(ngModel)] = "password"
+                        />
+                      </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
