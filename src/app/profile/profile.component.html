@@ -7,6 +7,9 @@
                height: 200px;
                width: 200px;
              }
+             button{
+                 margin-right: 20px;
+             }
             </style>
            </head>
     
@@ -20,8 +23,9 @@
                     class="img-thumbnail pimage col col-md-2"
                   />
                 </div>
-                <div class="col col-md-6">
-                    <div class="form-group mb-3 mt-1">
+                <div class="col col-md-8">
+                    <div class="row">
+                    <div class="form-group mb-3 mt-1 col col-md-6">
                         <label for="userName">FirstName:</label>
                         <input
                           type="text"
@@ -30,20 +34,52 @@
                           id="firstname"
                           aria-describedby="emailHelp"
                           placeholder="Enter FirstName"
-                          [(ngModel)] = "username" 
+                          
                         />
                       </div>
-                      <div class="form-group mb-3">
+                      <div class="mb-3 col col-md-6">
                         <label for="exampleInputPassword1">LastName:</label>
                         <input
-                          type="password"
-                          name="password"
+                          type="text"
+                          name="lastname"
                           class="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Password"
-                          [(ngModel)] = "password"
+                          placeholder="Enter LastName"
+                        
                         />
                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group mb-3 mt-1 col col-md-6">
+                            <label for="userName">Email:</label>
+                            <input
+                              type="email"
+                              name="email"
+                              class="form-control"
+                              id="email"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter Email"
+                              
+                            />
+                          </div>
+                          <div class="form-group mb-3 mt-1 col col-md-6">
+                            <label for="userName">Phone:</label>
+                            <input
+                              type="text"
+                              name="phone"
+                              class="form-control"
+                              id="phone"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter phone number"
+                              
+                            />
+                          </div>
+                    </div>
+                    <div class="row">
+                        <button class="col col-md-2 ">Friends(5)</button>
+                        <button class="col col-md-2">Besties(2)</button>
+                        
+                    </div>
                 </div>
             </div>
         </div>
