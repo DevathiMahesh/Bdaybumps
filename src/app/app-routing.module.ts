@@ -11,18 +11,19 @@ import { OrdersComponent } from './orders/orders.component';
 import { GiftsComponent } from './gifts/gifts.component';
 import { FriendsComponent } from './friends/friends.component';
 import { BestiesComponent } from './besties/besties.component';
+import { AuthGuardService } from './services/guards/auth-guard.service';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent,canActivate:[AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'friends',  component:FriendsComponent},
-  { path: 'besties',component:BestiesComponent},
-  { path: 'memories', component: MemoriesComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'gifts', component: GiftsComponent },
+  { path: 'profile', component: ProfileComponent,canActivate:[AuthGuardService] },
+  { path: 'friends',  component:FriendsComponent,canActivate:[AuthGuardService]},
+  { path: 'besties',component:BestiesComponent,canActivate:[AuthGuardService]},
+  { path: 'memories', component: MemoriesComponent,canActivate:[AuthGuardService] },
+  { path: 'gallery', component: GalleryComponent,canActivate:[AuthGuardService] },
+  { path: 'orders', component: OrdersComponent,canActivate:[AuthGuardService] },
+  { path: 'gifts', component: GiftsComponent,canActivate:[AuthGuardService] },
 ];
 
 @NgModule({

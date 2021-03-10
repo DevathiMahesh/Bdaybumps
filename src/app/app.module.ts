@@ -22,6 +22,8 @@ import {addBuserReducer} from './reducers/Buser.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FriendsComponent } from './friends/friends.component';
 import { BestiesComponent } from './besties/besties.component';
+import { AuthGuardService } from './services/guards/auth-guard.service';
+import { LoginserviceService } from './services/loginservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,7 @@ import { BestiesComponent } from './besties/besties.component';
     }),
    
   ],
-  providers: [],
+  providers: [AuthGuardService,LoginserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
