@@ -14,7 +14,7 @@ export class RemcardComponent implements OnInit {
   data = {};
   wishdata = {};
   constructor() { 
-     axios.get("http://localhost:8015/bdaybumps/getTimeline/"+3).then(
+     axios.get("http://localhost:8015/bdaybumps/getTimeline/"+1).then(
        (response)=>{
           this.data = response.data;
           console.log(response.data);
