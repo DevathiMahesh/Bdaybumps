@@ -8,7 +8,9 @@
                width: 200px;
              }
              button{
-                 margin-right: 20px;
+                 margin-top: 5px;
+                 margin-bottom: 5px;
+
              }
             </style>
            </head>
@@ -22,8 +24,19 @@
                     alt="Profile"
                     class="img-thumbnail pimage col col-md-2"
                   />
+                  <div class="row">
+                     <h4>Devathi Mahesh</h4>
+                    <button class="col col-md-8 btn btn-outline-dark">Upload Photo</button>
+                    
+                    <button class="col col-md-8 btn btn-outline-dark">Friends(5)</button>
+                    <button class="col col-md-8 btn btn-outline-dark">Besties(2)</button>
+                    <button class="col col-md-8 btn btn-outline-dark">Memories(2)</button>
+                    <button class="col col-md-8 btn btn-outline-dark">Gifts(10)</button>
+                    <button class="col col-md-8 btn btn-outline-dark">Orders(5)</button>
+                </div>
                 </div>
                 <div class="col col-md-8">
+                    <h3>Profile Details</h3>
                     <div class="row">
                     <div class="form-group mb-3 mt-1 col col-md-6">
                         <label for="userName">FirstName:</label>
@@ -51,7 +64,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group mb-3 mt-1 col col-md-6">
-                            <label for="userName">Email:</label>
+                            <label for="userName">Email: (Primary Email)</label>
                             <input
                               type="email"
                               name="email"
@@ -63,7 +76,7 @@
                             />
                           </div>
                           <div class="form-group mb-3 mt-1 col col-md-6">
-                            <label for="userName">Phone:</label>
+                            <label for="userName">Phone: (Primary Contact)</label>
                             <input
                               type="text"
                               name="phone"
@@ -76,10 +89,197 @@
                           </div>
                     </div>
                     <div class="row">
-                        <button class="col col-md-2 ">Friends(5)</button>
-                        <button class="col col-md-2">Besties(2)</button>
+                      <div class="form-group mb-3 mt-1 col col-md-6">
+                          <label for="userName">Email: (Recovery Email)</label>
+                          <input
+                            type="email"
+                            name="recoveryemail"
+                            class="form-control"
+                            id="recoveryemail"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter Recovery Email"
+                            
+                          />
+                        </div>
+                        <div class="form-group mb-3 mt-1 col col-md-6">
+                          <label for="userName">Phone: (Secondary Contact)</label>
+                          <input
+                            type="text"
+                            name="secondaryphone"
+                            class="form-control"
+                            id="phone"
+                            aria-describedby="phone2"
+                            placeholder="Enter phone number(secondary contact)"
+                            
+                          />
+                        </div>
+                  </div>
+
+                    <hr/>
+                    <h3>Permanent Address</h3>
+                    <div class="row">
+                      <div class="form-group mb-3 mt-1 col col-md-6">
+                          <label for="ad1">Address Line 1</label>
+                          <input
+                            type="text"
+                            name="address1"
+                            class="form-control"
+                            id="address1"
+                            aria-describedby="emailHelp"
+                            placeholder=""
+                            
+                          />
+                        </div>
+                        <div class="form-group mb-3 mt-1 col col-md-6">
+                          <label for="address2">Address Line 2</label>
+                          <input
+                            type="text"
+                            name="address2"
+                            class="form-control"
+                            id="address2"
+                            aria-describedby="address2"
+                            placeholder=""
+                            
+                          />
+                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group mb-3 mt-1 col col-md-3">
+                        <label for="country">Select Country</label>
+                        <input
+                          type="dropdown"
+                          name="country"
+                          class="form-control"
+                          id="country"
+                          aria-describedby="emailHelp"
+                          placeholder="Select Country"
+                          
+                        />
+                      </div>
+                      <div class="form-group mb-3 mt-1 col col-md-3">
+                        <label for="userName">Select State</label>
+                        <input
+                          type="text"
+                          name="state"
+                          class="form-control"
+                          id="state"
+                          aria-describedby="state"
+                          placeholder="Select State"
+                          
+                        />
+                      </div>
+                    
+                        <div class="form-group mb-3 mt-1 col col-md-3">
+                            <label for="district">Select District</label>
+                            <input
+                              type="text"
+                              name="district"
+                              class="form-control"
+                              id="district"
+                              aria-describedby="district"
+                              placeholder="Select District"
+                              
+                            />
+                          </div>
+                          <div class="form-group mb-3 mt-1 col col-md-3">
+                            <label for="pincode">Pincode</label>
+                            <input
+                              type="text"
+                              name="pincode"
+                              class="form-control"
+                              id="pincode"
+                              aria-describedby="pincode"
+                              placeholder="Enter pincode"
+                              
+                            />
+                          </div>
+                    
+  
+                </div>
+                <hr/>
+                <h3>Secondary Address</h3>
+                <div class="row">
+                  <div class="form-group mb-3 mt-1 col col-md-6">
+                      <label for="ad1">Address Line 1</label>
+                      <input
+                        type="text"
+                        name="address1"
+                        class="form-control"
+                        id="address1"
+                        aria-describedby="emailHelp"
+                        placeholder=""
                         
+                      />
                     </div>
+                    <div class="form-group mb-3 mt-1 col col-md-6">
+                      <label for="address2">Address Line 2</label>
+                      <input
+                        type="text"
+                        name="address2"
+                        class="form-control"
+                        id="address2"
+                        aria-describedby="address2"
+                        placeholder=""
+                        
+                      />
+                    </div>
+              </div>
+              <div class="row">
+                <div class="form-group mb-3 mt-1 col col-md-3">
+                    <label for="country">Select Country</label>
+                    <input
+                      type="dropdown"
+                      name="country"
+                      class="form-control"
+                      id="country"
+                      aria-describedby="emailHelp"
+                      placeholder="Select Country"
+                      
+                    />
+                  </div>
+                  <div class="form-group mb-3 mt-1 col col-md-3">
+                    <label for="userName">Select State</label>
+                    <input
+                      type="text"
+                      name="state"
+                      class="form-control"
+                      id="state"
+                      aria-describedby="state"
+                      placeholder="Select State"
+                      
+                    />
+                  </div>
+                
+                    <div class="form-group mb-3 mt-1 col col-md-3">
+                        <label for="district">Select District</label>
+                        <input
+                          type="text"
+                          name="district"
+                          class="form-control"
+                          id="district"
+                          aria-describedby="district"
+                          placeholder="Select District"
+                          
+                        />
+                      </div>
+                      <div class="form-group mb-3 mt-1 col col-md-3">
+                        <label for="pincode">Pincode</label>
+                        <input
+                          type="text"
+                          name="pincode"
+                          class="form-control"
+                          id="pincode"
+                          aria-describedby="pincode"
+                          placeholder="Enter pincode"
+                          
+                        />
+                      </div>
+                
+
+            </div>
+            <hr/>
+
+                    
                 </div>
             </div>
         </div>
