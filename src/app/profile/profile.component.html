@@ -12,6 +12,14 @@
                  margin-bottom: 5px;
 
              }
+             .alignbutton{
+               display:flex;
+               justify-content:flex-start;
+             }
+             fa-icon{
+               margin-right: 20px;
+               margin-left: 10px;
+             }
             </style>
            </head>
     
@@ -26,13 +34,12 @@
                   />
                   <div class="row">
                      <h4>Devathi Mahesh</h4>
-                    <button class="col col-md-8 btn btn-outline-dark">Upload Photo</button>
-                    
-                    <button class="col col-md-8 btn btn-outline-dark" (click)="loadComponent('friends')">Friends(5)</button>
-                    <button class="col col-md-8 btn btn-outline-dark" (click)="loadComponent('besties')">Besties(2)</button>
-                    <button class="col col-md-8 btn btn-outline-dark" (click)="loadComponent('memories')"> Memories(2)</button>
-                    <button class="col col-md-8 btn btn-outline-dark" (click)="loadComponent('gifts')">Gifts(10)</button>
-                    <button class="col col-md-8 btn btn-outline-dark" (click)="loadComponent('orders')">Orders(5)</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton"> <fa-icon [icon]="faphoto" class="fa-lg"></fa-icon>Upload Photo</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton" (click)="loadComponent('friends')"> <fa-icon [icon]="fafriends" class="fa-lg"></fa-icon> Friends(5)</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton" (click)="loadComponent('besties')"> <fa-icon [icon]="fabesties" class="fa-lg"></fa-icon>Besties(2)</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton" (click)="loadComponent('memories')"> <fa-icon [icon]="famemories" class="fa-lg"></fa-icon> Memories(2)</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton" (click)="loadComponent('gifts')"> <fa-icon [icon]="fagifts" class="fa-lg"></fa-icon>Gifts(10)</button>
+                    <button class="col col-md-8 btn btn-outline-dark alignbutton" (click)="loadComponent('orders')"> <fa-icon [icon]="faorders" class="fa-lg"></fa-icon>Orders(5)</button>
                 </div>
                 </div>
                 <div class="col col-md-8">

@@ -1,1 +1,68 @@
-<p style="margin-top: 200px;">gallery works!</p>
+<html>
+  <head>
+    <style>
+      .nav-link.active {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul
+        class="nav nav-pills mb-3 row justify-content-md-center"
+        id="pills-tab"
+        role="tablist"
+        style="margin-top: 100px"
+      >
+        <li class="nav-item col col-md-5" role="presentation">
+          <button
+            class="nav-link active btn btn-link col col-md-12"
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-home"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+          >
+            Gallery
+          </button>
+        </li>
+        <li class="nav-item col col-md-5" role="presentation">
+          <button
+            class="nav-link btn btn-link col col-md-12"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+          >
+            Albums
+          </button>
+        </li>
+      </ul>
+      <hr />
+    </div>
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="row tab-pane fade show active"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <mdb-image-modal [modalImages]="images" type="margin"></mdb-image-modal>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab"
+      >
+        ...
+      </div>
+    </div>
+  </body>
+</html>

@@ -24,6 +24,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { BestiesComponent } from './besties/besties.component';
 import { AuthGuardService } from './services/guards/auth-guard.service';
 import { LoginserviceService } from './services/loginservice.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { LoginserviceService } from './services/loginservice.service';
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot({Buser:addBuserReducer}),
     StoreDevtoolsModule.instrument({

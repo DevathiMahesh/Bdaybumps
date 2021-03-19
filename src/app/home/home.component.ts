@@ -13,6 +13,7 @@ import { Buser } from '../models/buser';
 export class HomeComponent implements OnInit {
   faplus = faPlus;
   faImage = faImage;
+  
   buser:any;
   litems = [
     { title: 'My Profile', route: 'profile' },

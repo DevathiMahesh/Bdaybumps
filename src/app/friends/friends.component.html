@@ -9,7 +9,7 @@
         min-height: 70px;
         padding-top: 20px;
         border-radius: 15px;
-        border:1px solid black;
+        border: 1px solid black;
         margin-bottom: 15px;
         margin-left: 70px;
       }
@@ -20,6 +20,24 @@
         margin-top: -20px;
         margin-right: 20px;
       }
+      .avatar-wrapper {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        /* border:1px solid black; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mbuttondiv{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .handpointer{
+         cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -27,15 +45,20 @@
       class="container justify-content-md-center"
       style="margin-top: 100px; background-color: white"
     >
-      <div class="row ">
-        <h2  style="text-align:center;margin:20px;">Your Friends List</h2>
+      <div class="row">
+        <h2 style="text-align: center; margin: 20px">
+          Your Friends List
+          <span>
+            <button class="btn btn-outline-dark">+ Add New Friend</button>
+          </span>
+        </h2>
         <div
-          class="col col-md-5  friendcard justify-content-md-center"
+          class="col col-md-5 friendcard justify-content-md-center"
           *ngFor="let i of friends"
         >
           <div class="row">
             <div class="col col-md-6">
-                <img
+              <img
                 src="/assets/images/devathi.jpg"
                 alt="Profile"
                 class="img-thumbnail pimage col col-md-2"
@@ -44,14 +67,156 @@
             </div>
 
             <div class="col col-md-6">
-              <button class="btn btn-outline-dark btnstyles btn-sm">Bestie</button>
-              <button class="btn btn-outline-dark btnstyles btn-sm">Remove</button>
+              <button
+                class="btn btn-outline-dark btnstyles btn-sm"
+                (click)="openmodal(content, i)"
+              >
+                View Details
+              </button>
+              <fa-icon [icon]="faheart" class="fa-lg handpointer"></fa-icon>&nbsp;&nbsp;
+              <fa-icon [icon]="fadelete" class="fa-lg handpointer"  (click)="deleteFriend(i)"></fa-icon>
             </div>
-          
-          
           </div>
         </div>
       </div>
+      <ng-template #content let-modal>
+        <div class="modal-body">
+          <div class="avatar-wrapper">
+            <img
+              class="profile-pic"
+              src="/assets/images/profiledummy.jpg"
+              style="max-height: 100%; max-width: 100%"
+            />
+          </div>
+          <hr />
+          <form>
+            <div class="container" style="margin-top: 10px">
+              <div class="row">
+                <div class="col col-md-5">
+                  <b style="font-size: large"> Friend Name :</b>
+                </div>
+                <div class="col col-md-6">
+                  <div class="form-group mb-3 mt-1 col col-md-12">
+                    <input
+                      type="text"
+                      [value]="selectedFriend.fname"
+                      name="fname"
+                      class="form-control"
+                      id="fname"
+                      aria-describedby="fname"
+                      placeholder="Friend Name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-5">
+                  <b style="font-size: large"> Phone Number :</b>
+                </div>
+                <div class="col col-md-6">
+                  <div class="form-group mb-3 mt-1 col col-md-12">
+                    <input
+                      type="text"
+                      [value]="selectedFriend.fphone"
+                      name="fphone"
+                      class="form-control"
+                      id="fphone"
+                      aria-describedby="fphone"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-5">
+                  <b style="font-size: large"> Email Address:</b>
+                </div>
+                <div class="col col-md-6">
+                  <div class="form-group mb-3 mt-1 col col-md-12">
+                    <input
+                      type="email"
+                      [value]="selectedFriend.femail"
+                      name="femail"
+                      class="form-control"
+                      id="femail"
+                      aria-describedby="femail"
+                      placeholder="Email address"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-5">
+                  <b style="font-size: large"> Birthday:</b>
+                </div>
+                <div class="col col-md-6">
+                  <div class="form-group mb-3 mt-1 col col-md-12">
+                    <input
+                      type="date"
+                      [value]="selectedFriend.fdob"
+                      name="fdob"
+                      class="form-control"
+                      id="fdob"
+                      aria-describedby="fdob"
+                      placeholder="Birthday"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-5">
+                  <b style="font-size: large"> Bestie or Not:</b>
+                </div>
+                <div class="col col-md-6">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked="selectedFriend.bestie"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Yes</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                      checked="selectedFriend.bestie"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >No</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr/>
+        <div class="mbuttondiv">
+          <button
+            type="button"
+            class="btn btn-outline-dark "
+            (click)="modal.close('Save click')"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-dark "
+            (click)="modal.close('Save click')"
+          >
+            Save
+          </button>
+        </div>
+      </ng-template>
     </div>
   </body>
 </html>
