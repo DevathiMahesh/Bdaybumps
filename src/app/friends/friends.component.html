@@ -99,12 +99,14 @@
                   <div class="form-group mb-3 mt-1 col col-md-12">
                     <input
                       type="text"
-                      [value]="selectedFriend.fname"
+                    
                       name="fname"
                       class="form-control"
                       id="fname"
                       aria-describedby="fname"
                       placeholder="Friend Name"
+                      [ngModel]="selectedFriend.fname"
+                      (ngModelChange) = "changevalue('fname',$event)"
                     />
                   </div>
                 </div>
@@ -117,7 +119,8 @@
                   <div class="form-group mb-3 mt-1 col col-md-12">
                     <input
                       type="text"
-                      [value]="selectedFriend.fphone"
+                    
+                      [(ngModel)]="selectedFriend.fphone" 
                       name="fphone"
                       class="form-control"
                       id="fphone"
@@ -135,7 +138,8 @@
                   <div class="form-group mb-3 mt-1 col col-md-12">
                     <input
                       type="email"
-                      [value]="selectedFriend.femail"
+                    
+                      [(ngModel)]="selectedFriend.femail" 
                       name="femail"
                       class="form-control"
                       id="femail"
@@ -153,7 +157,8 @@
                   <div class="form-group mb-3 mt-1 col col-md-12">
                     <input
                       type="date"
-                      [value]="selectedFriend.fdob"
+                    
+                      [(ngModel)]="selectedFriend.fdob" 
                       name="fdob"
                       class="form-control"
                       id="fdob"
@@ -211,7 +216,7 @@
           <button
             type="button"
             class="btn btn-outline-dark "
-            (click)="modal.close('Save click')"
+            (click)="saveFriend();modal.close('Save click')"
           >
             Save
           </button>

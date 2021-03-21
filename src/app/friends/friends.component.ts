@@ -4,6 +4,7 @@ import { AppState } from '../app.state';
 import { faHeart,faTrashAlt,faCamera} from '@fortawesome/free-solid-svg-icons';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FriendsService } from '../services/friends.service';
+import { Bfriend } from '../models/bfriend';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -11,7 +12,7 @@ import { FriendsService } from '../services/friends.service';
 })
 export class FriendsComponent implements OnInit {
   friends:any[] = [];
-  selectedFriend:any = {};
+  selectedFriend:Bfriend;
   faheart=faHeart;
   fadelete = faTrashAlt;
   friendModal = true;
@@ -27,8 +28,14 @@ export class FriendsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  changevalue(type,value):void{
+    console.log(type,value);
+    this.selectedFriend[type] = value;
+  
+  }
   openmodal(content,friend):void {
-    this.selectedFriend = friend;
+    this.selectedFriend = JSON.parse(JSON.stringify(friend));
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -56,6 +63,16 @@ export class FriendsComponent implements OnInit {
       )
 
       
+  }
+  saveFriend():void{
+    this.friendservice.saveFriend(this.selectedFriend).subscribe(
+      (response)=>{
+        console.log(response);
+      },
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
 }

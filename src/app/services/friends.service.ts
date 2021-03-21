@@ -30,4 +30,16 @@ export class FriendsService {
     }
     return this.http.post<String>("http://localhost:8015/bdaybumps/deleteFriend",body)
   }
+  saveFriend(friend):Observable<String>{
+    let fri = {
+      "fid":friend.fid,
+      "fname":friend.fname,
+      "femail":friend.femail,
+      "fphone":friend.fphone,
+      "fdob":friend.fdob,
+      "bestie":friend.bestie
+   }
+  
+      return this.http.put<String>("http://localhost:8015/bdaybumps/updateFriend",fri);
+  }
 }
