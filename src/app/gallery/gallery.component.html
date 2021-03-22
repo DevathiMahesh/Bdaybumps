@@ -1,12 +1,80 @@
 <html>
   <head>
     <style>
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
       .nav-link.active {
         background-color: black;
       }
+      .galleryImage {
+        margin-left: 0px;
+        margin-bottom: 00px;
+        margin-right: -50px;
+        height: 380px;
+        width: auto;
+      }
+      .galleryImage:hover {
+        transform: scale(1.2);
+      }
+      .gallery {
+        margin-left: 0px;
+        margin-right: 20px;
+      }
+      .scrollstyle {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      .createalbum {
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        background-color: black;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .albumitem {
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: whitesmoke;
+        position: relative;
+      }
+      .albumitem:hover {
+        transform: scale(1.1);
+      }
+      .aimage {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      fa-icon {
+        color: white;
+        margin-left: 30px;
+      }
+      .albumname {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        background-color: transparent;
+        bottom: 0px;
+        left: 30px;
+      }
+      .transbox{
+         background-color: transparent;
+         
+      }
     </style>
   </head>
-  <body>
+  <body class="scrollstyle">
     <div class="container">
       <ul
         class="nav nav-pills mb-3 row justify-content-md-center"
@@ -47,12 +115,127 @@
     </div>
     <div class="tab-content" id="pills-tabContent">
       <div
-        class="row tab-pane fade show active"
+        class="tab-pane fade show active"
         id="pills-home"
         role="tabpanel"
         aria-labelledby="pills-home-tab"
       >
-        <mdb-image-modal [modalImages]="images" type="margin"></mdb-image-modal>
+        <!-- <div class="container "> -->
+        <div class="row mt-5 gallery">
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/swaroop.jpg"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/taj.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/vikas.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/suman.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/vivek.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/mani.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/prabhu.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/somala.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/devathi.jpg"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/gowtham.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/harsha.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/mohith.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/sada.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/sai.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/saran.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+          <div class="col col md-3">
+            <img
+              class="galleryImage"
+              src="../../assets//images/venky.jfif"
+              alt="Swaroop-Yashwanth"
+            />
+          </div>
+        </div>
+        <!-- </div> -->
       </div>
 
       <div
@@ -61,7 +244,17 @@
         role="tabpanel"
         aria-labelledby="pills-profile-tab"
       >
-        ...
+        <div class="row" style="margin-left: 100px">
+          <div class="col col-md-3 createalbum">
+            <fa-icon [icon]="faplus" class="fa-8x handpointer"></fa-icon>
+          </div>
+          <div class="col col-md-3 albumitem" *ngFor="let i of imgurls;let j=index;">
+            <img src="{{ i }}" class="aimage" alt="venky album" />
+            <div class="transbox">
+              <p class="albumname">{{albumnames[j]}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -28,7 +28,7 @@ export class FriendsService {
        "buid":this.buid,
        "friend":fri
     }
-    return this.http.post<String>("http://localhost:8015/bdaybumps/deleteFriend",body)
+    return this.http.post<String>("http://localhost:8015/bdaybumps/deleteFriend",fri)
   }
   saveFriend(friend):Observable<String>{
     let fri = {

@@ -12,6 +12,10 @@ import { GiftsComponent } from './gifts/gifts.component';
 import { FriendsComponent } from './friends/friends.component';
 import { BestiesComponent } from './besties/besties.component';
 import { AuthGuardService } from './services/guards/auth-guard.service';
+import { StoreModule, ActionReducerMap, ActionReducer, MetaReducer, State } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
+import { AppState } from './app.state';
+import {addBuserReducer} from './reducers/Buser.reducer';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent,canActivate:[AuthGuardService] },
@@ -26,8 +30,19 @@ const routes: Routes = [
   { path: 'gifts', component: GiftsComponent,canActivate:[AuthGuardService] },
 ];
 
+const reducers: ActionReducerMap<AppState> = {
+     buser: addBuserReducer
+};
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({keys: ['Buser']})(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    StoreModule.forRoot(
+      reducers,
+      {metaReducers}
+  )],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
